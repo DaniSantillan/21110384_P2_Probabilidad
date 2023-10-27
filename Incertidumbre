@@ -1,0 +1,25 @@
+import random
+
+def lanzar_dado():
+    # Simula el lanzamiento de un dado de 6 caras
+    return random.randint(1, 6)
+
+def probabilidad_numero_par(n_lanzamientos):
+    # Calcula la probabilidad de obtener un número par en n_lanzamientos
+    numeros_pares = 0
+
+    for _ in range(n_lanzamientos):
+        resultado = lanzar_dado()
+        if resultado % 2 == 0:
+            numeros_pares += 1
+
+    probabilidad = numeros_pares / n_lanzamientos
+    return probabilidad
+
+# Número de lanzamientos
+lanzamientos = 1000
+
+# Calcula la probabilidad de obtener un número par en 1000 lanzamientos
+probabilidad_par = probabilidad_numero_par(lanzamientos)
+
+print(f"Probabilidad de obtener un número par en {lanzamientos} lanzamientos: {probabilidad_par}")
