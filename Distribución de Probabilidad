@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import binom
+
+# Parámetros de la distribución binomial
+n = 10  # Número de ensayos
+p = 0.5  # Probabilidad de éxito
+
+# Generar datos con la distribución binomial
+datos_binomiales = np.arange(0, n+1)
+probabilidades = binom.pmf(datos_binomiales, n, p)
+
+# Visualizar la distribución
+plt.bar(datos_binomiales, probabilidades, align='center', alpha=0.5)
+plt.title('Distribución Binomial')
+plt.xlabel('Número de Éxitos')
+plt.ylabel('Probabilidad')
+plt.show()
