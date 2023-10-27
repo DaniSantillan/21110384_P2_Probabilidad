@@ -1,0 +1,11 @@
+# Importar el módulo random para simular eventos aleatorios
+import random
+
+# Definir la probabilidad a priori
+probabilidad_priori = 0.3  # Puedes ajustar este valor según tu escenario
+
+# Simular un evento basado en la probabilidad a priori
+if random.uniform(0, 1) < probabilidad_priori:
+    print("El evento ocurrió según la probabilidad a priori.")
+else:
+    print("El evento no ocurrió según la probabilidad a priori.")
