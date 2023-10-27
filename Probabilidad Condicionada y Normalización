@@ -1,0 +1,22 @@
+# Importamos el módulo necesario
+import numpy as np
+
+# Creamos un espacio muestral simple
+espacio_muestral = np.array([[1, 2], [3, 4]])
+
+# Definimos los eventos A y B
+evento_B = 2  # Por ejemplo, B es que haya salido un 2
+evento_A = 1  # Por ejemplo, A es que la suma sea mayor a 3
+
+# Calculamos la probabilidad condicionada P(A|B)
+prob_condicionada = np.sum(espacio_muestral > evento_A) / np.sum(espacio_muestral == evento_B)
+
+# Imprimimos la probabilidad condicionada
+print(f'La probabilidad de que la suma sea mayor a {evento_A} dado que ha salido {evento_B} es: {prob_condicionada}')
+
+# Normalizamos el espacio muestral
+espacio_muestral_normalizado = espacio_muestral / np.sum(espacio_muestral)
+
+# Imprimimos el espacio muestral normalizado
+print('\nEspacio Muestral Normalizado:')
+print(espacio_muestral_normalizado)
