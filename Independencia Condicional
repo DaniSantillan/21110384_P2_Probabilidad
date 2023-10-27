@@ -1,0 +1,28 @@
+# Importar el módulo necesario
+import random
+
+# Definir la función de lanzamiento de dado
+def lanzar_dado():
+    return random.randint(1, 6)
+
+# Número de experimentos
+num_experimentos = 100000
+
+# Contador para contar eventos deseados
+conteo_eventos_deseados = 0
+
+# Realizar los experimentos
+for _ in range(num_experimentos):
+    # Lanzar ambos dados
+    dado1 = lanzar_dado()
+    dado2 = lanzar_dado()
+
+    # Verificar si ambos dados muestran los valores deseados
+    if dado1 == 3 and dado2 == 4:
+        conteo_eventos_deseados += 1
+
+# Calcular la probabilidad
+probabilidad = conteo_eventos_deseados / num_experimentos
+
+# Imprimir el resultado
+print("Probabilidad de obtener un 3 en el primer dado y un 4 en el segundo dado:", probabilidad)
